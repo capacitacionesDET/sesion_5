@@ -1,0 +1,82 @@
+---
+title: "Untitled"
+output: pdf_document
+---
+
+# Resolución ejercicio visualización ggplot
+
+## Código auxiliar
+
+
+```{r,eval=FALSE}
+library(tidyverse)
+options(scipen = "999") #para eliminar notación científica
+#Abrir base de la epf
+epf <- read.delim("data/base-personas-viii-epf-(formato-csv).csv", sep = ";" )
+names(epf) <- tolower(names(epf)) #pasar a minúscula
+
+#Reemplazar las comas por punto
+epf2 <- epf %>% 
+  select(gastot_hd_pc, ing_disp_hog_hd_pc, zona =  ï..zona, jhogar, sexo) %>% 
+  mutate_at(vars(gastot_hd_pc, ing_disp_hog_hd_pc), funs(as.numeric(gsub(pattern = ",", replacement = ".", x = .)) )) %>% 
+  filter(jhogar == 1) #dejar un registro por hogar
+
+#Calcular los puntos de corte para los quintiles  
+quintiles <- quantile(x = epf2$ing_disp_hog_hd_pc, c(0, 0.2, 0.4, 0.6, 0.8, 1)) 
+
+#Crear la variable quintil.
+epf2 <- epf2 %>% 
+  mutate(quintil =  case_when(
+    ing_disp_hog_hd_pc <= quintiles[2] ~ "quntil1",
+    ing_disp_hog_hd_pc <= quintiles[3] ~ "quntil2",
+    ing_disp_hog_hd_pc <= quintiles[4] ~ "quntil3",
+    ing_disp_hog_hd_pc <= quintiles[5] ~ "quntil4",
+    ing_disp_hog_hd_pc <= quintiles[6] ~ "quntil5")
+)
+```
+
+## Código de la tarea
+Existen múltiples maneras de llegar al resultado, pero cualquier camino requiere llevar a cabo una transformación de los datos, antes de visualizar. A continuación, se muestra un camino que utiliza la función pivot_longer, sin embargo, cualquier otro método es igualmente válido. 
+
+Es importante considerar que para que las barras se vean una al lado de la otra, es preciso agregar el parámetro "dodge" a la función geom_bar. De otro modo, no se llegará al resultado esperado.  
+
+La transformación a factor en los ejercicios 2 y 3 tiene el objetivo de que `ggplot` interprete la información de manera correcta. Si no hacemos esta transformación, `ggplot` asumirá que la variable es continua y generará intervalos en el eje x.     
+
+### Ejercicio 1
+
+
+```{r, eval=F}
+epf2 %>%
+  group_by(quintil) %>%  # 
+  summarise_at(vars(gastot_hd_pc, ing_disp_hog_hd_pc), funs(mean)) %>% 
+  pivot_longer(-quintil, names_to = "tipo", values_to = "valor") %>% #
+  ggplot(aes(quintil, valor, fill = tipo )) +
+  geom_bar(stat = "identity", position = "dodge")
+
+```
+
+
+### Ejercicio 2
+
+```{r, eval=F}
+epf2 %>%
+  group_by(zona) %>% #
+  summarise_at(vars(gastot_hd_pc, ing_disp_hog_hd_pc), funs(mean)) %>% 
+  pivot_longer(-zona, names_to = "tipo", values_to = "valor") %>% #
+  ggplot(aes(as.factor(zona), valor, fill = tipo )) +
+  geom_bar(stat = "identity", position = "dodge")
+```
+
+
+### Ejercicio 3
+
+```{r, eval=F}
+epf2 %>%
+  group_by(sexo) %>% #
+  summarise_at(vars(gastot_hd_pc, ing_disp_hog_hd_pc), funs(mean)) %>% 
+  pivot_longer(-sexo, names_to = "tipo", values_to = "valor") %>% #
+  ggplot(aes(as.factor(sexo), valor, fill = tipo )) +
+  geom_bar(stat = "identity", position = "dodge")
+```
+
+
