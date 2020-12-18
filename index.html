@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Capacitación en R y herramientas de productividad</title>
+    <title>Capacitación en R</title>
     <meta charset="utf-8" />
     <meta name="author" content="" />
-    <meta name="date" content="2020-11-18" />
+    <meta name="date" content="2020-12-18" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -22,17 +22,12 @@ class: center, middle
 &lt;img src="imagenes/logo_portada2.png" width="200" /&gt;
 
 
-## Capacitación en R y herramientas de productividad
-
-## Proyecto Estratégico Servicios Compartidos para la Producción Estadística
+## Capacitación en R
 
 ## Visualización con ggplot2
 
-### Noviembre 2020
+### Diciembre 2020
 
-.center[
-Klaus Lehmann, Ignacio Agloni y Juan Medrano
-]
 
 
 
@@ -79,23 +74,6 @@ La visualización juega un rol importante en las etapas del análisis de datos:
 --
 
 **Los gráficos nos permiten comunicar y atraer la atención de una audiencia**: [The Joy of Stats](https://www.youtube.com/watch?v=V8lbiiTF2P0)
-
-???
-Los principales objetivos de los gráficos en estadística son: 
-i) facilitar comparaciones
-ii) identificar tendencias
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# La importancia de la visualización
-
-## [John Snow](https://es.wikipedia.org/wiki/John_Snow) es considerado el padre de la epidemiología 
-
-&lt;img src="imagenes/snow.png" width="800" /&gt;
-
 
 
 ---
@@ -150,7 +128,7 @@ background-position: 100% 0%
 
 # Visualizaciones no efectivas
 
-![](http://3.bp.blogspot.com/-91nBt0UagvM/VMd0gEHuicI/AAAAAAAAKcw/XNyCOWp_JFI/s1600/pie1.jpg)
+![](imagenes/mega_cadem.png)
 
 ---
 
@@ -295,24 +273,6 @@ background-position: 100% 0%
 ]
 
 
-
-
-
----
-
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Ejemplo
-
-## A partir de los conceptos revisados, ¿qué podemos decir de esta visualización?
-
-.center[
-&lt;img src="imagenes/babyboomers.PNG" width="600" /&gt;
-]
-
-
 ---
 .linea-superior[]
 .linea-inferior[]
@@ -324,6 +284,69 @@ background-position: 100% 0%
 
 &lt;img src="https://media.giphy.com/media/b5LTssxCLpvVe/giphy.gif" width="750" /&gt;
 ]
+
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Gráficos en R 
+
+R base ofrece herramientas de visualización
+
+--
+
+
+
+
+
+```r
+plot(pressure)
+```
+
+&lt;img src="index_files/figure-html/pressure-1.png" style="display: block; margin: auto;" /&gt;
+
+--
+
+Entonces, ¿por qué utilizar ggplot? 
+
+---
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Gráficos en R 
+
+
+`ggplot2` sigue una sintaxis coherente, lo que facilita su aprendizaje
+
+
+
+```r
+library(ggplot2)
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 3.6.3
+```
+
+```r
+ggplot(data = pressure) + 
+          geom_point(mapping = aes(x = temperature, y = pressure))
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+
+--
+
+`ggplot2` se ha convertido en el estándar para la visualización en R
+
+Estilo sobrio y elegante
+
+Hay librerías en python que usan el diseño de ggplot 
+
 
 
 ---
@@ -365,68 +388,12 @@ head(guaguas, 2)
 
 ### Generemos un gráfico de barras con la cantidad de mujeres y hombres
 
-
----
-
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Gráficos en R 
-
-R base ofrece herramientas de visualización
-
---
-
-
-
-
-
-```r
-plot(pressure)
-```
-
-&lt;img src="sesion_4_ggplot_files/figure-html/pressure-1.png" style="display: block; margin: auto;" /&gt;
-
---
-
-Entonces, ¿por qué utilizar ggplot? 
-
 ---
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
 
-# Gráficos en R 
-
-
-`ggplot2` sigue una sintaxis coherente, lo que facilita su aprendizaje
-
-
-
-```r
-library(ggplot2)
-ggplot(data = pressure) + 
-          geom_point(mapping = aes(x = temperature, y = pressure))
-```
-
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
-
---
-
-`ggplot2` se ha convertido en el estándar para la visualización en R
-
-Estilo sobrio y elegante
-
-Hay librerías en python que usan el diseño de ggplot 
-
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Volvamos a nuestros datos
+# Data set guaguas
 
 Queremos un gráfico de barras que nos muestre cantidad de nombres por sexo
 
@@ -471,7 +438,7 @@ Siempre comenzaremos con la función ggplot
 ggplot(data = tabla, aes(x = sexo, y = suma)) 
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
 --
 
 * `data`: tabla para la cual queremos generar el gráfico
@@ -497,7 +464,7 @@ ggplot(data = tabla, aes(x = sexo, y = suma)) +
 * geom_bar(stat = "identity")
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
 
 --
 
@@ -534,7 +501,7 @@ ggplot(data = tabla, aes(x = sexo, y = suma)) +
 ## Error: stat_count() can only have an x or y aesthetic.
 ```
 
-![](sesion_4_ggplot_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
 
 
 
@@ -556,27 +523,17 @@ ggplot(data = tabla, aes(x = sexo)) +
   geom_bar()
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
 
 --
 
-El problema es que nuestra base de datos no está ordenada de ese modo
+La función por defecto `stat_count()` grafica la frecuencia de la variable `sexo` en la base de datos `tabla`. 
+
+--
+
+Cada sexo aparece una pura vez en la base de datos (el sexo ya está agrupado).
 
 
-```r
-guaguas %&gt;% 
-  filter(nombre == "Juan" &amp; anio == 2010)
-```
-
-```
-## # A tibble: 1 x 5
-*##    anio sexo  nombre     n proporcion
-##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;      &lt;dbl&gt;
-*## 1  2010 M     Juan    1707    0.00650
-```
-
-
-Tenemos para cada nombre un conteo. Ejemplo: María, 300  
 
 
 ---
@@ -596,7 +553,7 @@ ggplot(data = tabla, aes(x = sexo, y = suma)) +
 * geom_hline(aes(yintercept = mean(suma)) )
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
 
 --
 
@@ -625,7 +582,7 @@ guaguas %&gt;%
 * geom_line()
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -640,14 +597,14 @@ Nombres de mujer más populares de 2019
 ```r
 top10 &lt;- guaguas %&gt;% 
   filter(anio == 2019 &amp; sexo == "F") %&gt;% 
-  group_by(sexo) %&gt;% 
   arrange(desc(n)) %&gt;% 
   slice(1:10)
+
 *ggplot(top10, aes(x = nombre, y = n, fill = nombre)) +
   geom_bar(stat = "identity")
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -663,14 +620,14 @@ Para ordenar de mayor a menor, puedo usar `fct_reorder`
 ```r
 top10 &lt;- guaguas %&gt;% 
   filter(anio == 2019 &amp; sexo == "F") %&gt;% 
-  group_by(sexo) %&gt;% 
   arrange(desc(n)) %&gt;% 
   slice(1:10)
+
 *ggplot(top10, aes(x = fct_reorder(nombre, desc(n)) , y = n, fill = nombre)) +
   geom_bar(stat = "identity")
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-13-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -692,14 +649,14 @@ Con la función `labs` podemos agregar etiquetas a nuestro gráfico
 ```r
 guaguas %&gt;% 
   filter(nombre == "Salvador" &amp; anio &lt;= 1990) %&gt;% 
-* ggplot(aes(x = anio, y = n, color = "coral")) +
+* ggplot(aes(x = anio, y = n, color = "red")) +
   geom_line() +
   geom_vline(xintercept = 1971, linetype="dashed") +
 * labs(title="El nombre Salvador a lo largo de la historia",
 *       x ="año", y = "frecuencia")
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-14-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-13-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -723,7 +680,7 @@ guaguas %&gt;%
 * theme(plot.title = element_text(hjust = 0.5))
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-15-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-14-1.png" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -748,11 +705,11 @@ Con `element_text` podemos modificar varias cosas
 
 ```r
 guaguas::guaguas %&gt;% 
-  filter(nombre == "Salvador" &amp; anio &lt;= 1990) %&gt;% 
+  filter(nombre == "Fidel" &amp; anio &lt;= 2019) %&gt;% 
   ggplot(aes(x = anio, y = n, color = "coral")) +
   geom_line() +
-  geom_vline(xintercept = 1971, linetype="dashed") +
-  labs(title="El nombre Salvador a lo largo de la historia",
+  geom_vline(xintercept = c(1961,1975), linetype="dashed") +
+  labs(title="El nombre Fidel a lo largo de la historia",
         x ="año", y = "frecuencia") + 
 * theme(plot.title = element_text(hjust = 0.5),
 *       axis.text.x = element_text(angle = 90))
@@ -762,7 +719,7 @@ guaguas::guaguas %&gt;%
 ]
 
 .pull-right[
-![](sesion_4_ggplot_files/figure-html/plot-label-out-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/plot-label-out-1.png)&lt;!-- --&gt;
 ]
 
 
@@ -778,22 +735,22 @@ background-position: 100% 0%
 .small[
 
 ```r
-guaguas %&gt;% 
-  filter(nombre == "Salvador" &amp; anio &lt;= 1990) %&gt;% 
+guaguas::guaguas %&gt;% 
+  filter(nombre == "Fidel" &amp; anio &lt;= 2019) %&gt;% 
   ggplot(aes(x = anio, y = n, color = "coral")) +
   geom_line() +
-  geom_vline(xintercept = 1971, linetype="dashed") +
-  labs(title="El nombre Salvador a lo largo de la historia",
-      x ="año", y = "frecuencia") + 
-  theme(plot.title = element_text(hjust = 0.5), 
-       axis.text.x = element_text(angle = 90),
-*      axis.title.x = element_text(color = "red"))
+  geom_vline(xintercept = c(1961,1975), linetype="dashed") +
+  labs(title="El nombre Fidel a lo largo de la historia",
+        x ="año", y = "frecuencia") + 
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle = 90),
+*       axis.title.x = element_text(color = "blue"))
 ```
 ]
 ]
 
 .pull-right[
-![](sesion_4_ggplot_files/figure-html/plot-label2-out-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/plot-label2-out-1.png)&lt;!-- --&gt;
 ]
 
 
@@ -810,59 +767,24 @@ background-position: 100% 0%
 .small[
 
 ```r
-guaguas %&gt;% 
-  filter(nombre == "Salvador" &amp; anio &lt;= 1990) %&gt;% 
+guaguas::guaguas %&gt;% 
+  filter(nombre == "Fidel" &amp; anio &lt;= 2019) %&gt;% 
   ggplot(aes(x = anio, y = n, color = "coral")) +
   geom_line() +
-  geom_vline(xintercept = 1971, linetype="dashed") +
-  labs(title="El nombre Salvador a lo largo de la historia",
-       x ="año", y = "frecuencia") + 
-  theme(plot.title = element_text(hjust = 0.5), 
+  geom_vline(xintercept = c(1961,1975), linetype="dashed") +
+  labs(title="El nombre Fidel a lo largo de la historia",
+        x ="año", y = "frecuencia") + 
+  theme(plot.title = element_text(hjust = 0.5),
         axis.text.x = element_text(angle = 90),
-        axis.title.x = element_text(color = "red"),
-*       axis.text.y = element_text(face = "bold.italic"))
-```
-]
-]
-
-
-.pull-right[
-![](sesion_4_ggplot_files/figure-html/plot-label3-out-1.png)&lt;!-- --&gt;
-]
-
-Con `face` manejamos el tipo de letra (plain, italic, bold o bold.italic)
-
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-  
-# Un poco más sobre theme
-
-.pull-left[
-.small[
-
-```r
-  guaguas %&gt;% 
-    filter(nombre == "Salvador" &amp; anio &lt;= 1990) %&gt;% 
-    ggplot(aes(x = anio, y = n, color = "coral")) +
-    geom_line() +
-    geom_vline(xintercept = 1971, linetype="dashed") +
-    labs(title="El nombre Salvador a lo largo de la historia",
-         x ="año", y = "frecuencia") + 
-    theme(plot.title = element_text(hjust = 0.5), 
-          axis.text.x = element_text(angle = 90),
-          axis.title.x = element_text(color = "red"),
-          axis.text.y = element_text(face = "bold.italic"),
-*         legend.position = "none")
+        axis.title.x = element_text(color = "blue"),
+*       legend.position = "none")
 ```
   ]
 ]
 
 
 .pull-right[
-![](sesion_4_ggplot_files/figure-html/plot-label4-out-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/plot-label4-out-1.png)&lt;!-- --&gt;
 ]
 
 Con `legend.position` manejamos la posición de la leyenda. En este caso decidimos sacarla con `none` 
@@ -878,26 +800,25 @@ background-position: 100% 0%
 .small[
 
 ```r
-  guaguas %&gt;% 
-    filter(nombre == "Salvador" &amp; anio &lt;= 1990) %&gt;% 
-    ggplot(aes(x = anio, y = n, color = "coral")) +
-    geom_line() +
-    geom_vline(xintercept = 1971, linetype="dashed") +
-    labs(title="El nombre Salvador a lo largo de la historia",
-         x ="año", y = "frecuencia") + 
-    theme(plot.title = element_text(hjust = 0.5), 
-          axis.text.x = element_text(angle = 90),
-          axis.title.x = element_text(color = "red"),
-          axis.text.y = element_text(face = "bold.italic"),
-*         legend.position =  "bottom",
-*         legend.background = element_rect(fill = "darkgray") )
+guaguas::guaguas %&gt;% 
+  filter(nombre == "Fidel" &amp; anio &lt;= 2019) %&gt;% 
+  ggplot(aes(x = anio, y = n, color = "coral")) +
+  geom_line() +
+  geom_vline(xintercept = c(1961,1975), linetype="dashed") +
+  labs(title="El nombre Fidel a lo largo de la historia",
+        x ="año", y = "frecuencia") + 
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle = 90),
+        axis.title.x = element_text(color = "blue"),
+        legend.position = "bottom",
+*       legend.background = element_rect(fill = "darkgray"))
 ```
   ]
 ]
 
 
 .pull-right[
-![](sesion_4_ggplot_files/figure-html/plot-label5-out-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/plot-label5-out-1.png)&lt;!-- --&gt;
 ]
 
 Con `legend.background` manejamos el fondo de la leyenda. En este caso usamos `darkgray` 
@@ -923,7 +844,7 @@ guaguas %&gt;%
   theme(plot.title = element_text(hjust = 0.5)) 
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-16-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-15-1.png" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -972,11 +893,11 @@ Veamos cuál es la relación entre ingreso y esperanza de vida
 life &lt;-  gapminder::gapminder %&gt;% 
   filter(year == 2007)
 
-ggplot(life, aes(x = lifeExp, y = log(gdpPercap)) ) + 
+life %&gt;% ggplot(aes(x = lifeExp, y = log(gdpPercap)) ) + 
   geom_point()
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-17-1.png" style="display: block; margin: auto;" /&gt;
 
 Aplicamos una transformación logarítmica para obtener una mejor visualización
 
@@ -995,11 +916,11 @@ Agreguemos una variable para indicar el continente de cada país
 
 
 ```r
-ggplot(life, aes(x = lifeExp, y = log(gdpPercap), color = continent) ) + 
+life %&gt;% ggplot(aes(x = lifeExp, y = log(gdpPercap), color = continent) ) + 
   geom_point()
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-19-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -1021,7 +942,7 @@ ggplot(life, aes(x = lifeExp, y = log(gdpPercap), color = continent, size = pop)
 * scale_size(range = c(1, 7))
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-19-1.png" style="display: block; margin: auto;" /&gt;
 
 --
 
@@ -1046,27 +967,7 @@ ggplot(life, aes(x = lifeExp, y = log(gdpPercap), color = continent, size = pop)
   scale_size(range = c(1, 5))
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" /&gt;
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Problema: los puntos se superponen
-
-`geom_jitter` agrega un ruido aleatorio
-
-
-
-```r
-ggplot(life, aes(x = lifeExp, y = log(gdpPercap), color = continent, size = pop) ) + 
-  geom_point() +
-  geom_jitter(width = 0.5) +
-  scale_size()
-```
-
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -1085,7 +986,7 @@ ggplot(life, aes(x = lifeExp, y = log(gdpPercap), color = continent, size = pop)
 * facet_wrap(~continent)
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-23-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -1116,7 +1017,7 @@ gapminder::gapminder %&gt;%
 * facet_wrap(~year)
 ```
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-24-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -1149,46 +1050,6 @@ Debemos preocuparnos de 2 cosas:
 
 2. Aprender a buscar rápidamente en internet lo que necesitamos
 
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# gganimate (bonus)
-
-En nuestras visualizaciones la variable tiempo no se aprecia tan bien
-
-Podemos incluir movimiento para mejorar la percepción de cómo cambia la relación entre pib y esperanza de vida a lo largo del tiempo
-
-
-
-```r
-#install.packages("gifski") puede ser necesario
-library(gganimate)
-p &lt;- ggplot(gapminder::gapminder, aes(gdpPercap, lifeExp, 
-                           color = continent)) +
-  geom_point(aes(size = pop), show.legend = FALSE) +
-  scale_y_continuous(breaks = seq(20,90,10)) +
-  scale_size(range = c(2,12)) + 
-  scale_x_log10() +
-* transition_states(year) +
-* labs(title = 'Año: {closest_state}', x = 'pib p/c', y = 'esperanza de vida') +
-  theme(plot.title = element_text(hjust = 0.5))
-```
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# gganimate
-
-
-```r
-animate(p, renderer = gifski_renderer(), fps=10)
-```
-
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-26-1.gif" style="display: block; margin: auto;" /&gt;
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -1231,7 +1092,7 @@ La EPF usa un clasificador llamado CCIF, que tiene más de 1.000 categorías
 
 --
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-27-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-23-1.png" style="display: block; margin: auto;" /&gt;
 
 --
 
@@ -1302,7 +1163,7 @@ background-position: 100% 0%
 
 # Ejemplo INE
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-28-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-24-1.png" style="display: block; margin: auto;" /&gt;
 
 ### Si clasificamos el 5% a mano, mejoramos aproximadamente 3 pp
 
@@ -1317,7 +1178,12 @@ background-position: 100% 0%
 
 --
 
-&lt;img src="sesion_4_ggplot_files/figure-html/unnamed-chunk-29-1.gif" style="display: block; margin: auto;" /&gt;
+
+```
+## Warning: package 'gganimate' was built under R version 3.6.3
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-25-1.gif" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -1338,19 +1204,7 @@ background-position: 100% 0%
 [EPF-shiny](https://klaus-lehmann.shinyapps.io/epf-app/?_ga=2.98503452.206060216.1596836306-1258237829.1596836306)
 
 ---
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
 
-# Más ejemplos para motivar
-
-
-.center[
-&lt;img src="imagenes/mapa_no_res.PNG" width="550" /&gt;
-]
-
-
----
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
@@ -1360,8 +1214,6 @@ background-position: 100% 0%
 [Elegant Graphics for Data Analysis (Hadley Wickham)](https://ggplot2-book.org/index.html)
 
 [Tutorial muy claro de ggplot](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part1-With-R-Code.html)
-
-[Tutorial y documentación de gganimate de los desarroladores](https://gganimate.com/)
 
 [Mastering Shiny (Hadley Wickham)](https://mastering-shiny.org/index.html)
 
@@ -1375,13 +1227,11 @@ class: center, middle
 &lt;img src="imagenes/logo_portada2.png" width="200" /&gt;
 
 
-## Capacitación en R y herramientas de productividad
-
-## Proyecto Estratégico Servicios Compartidos para la Producción Estadística
+## Capacitación en R
 
 ## Visualización con ggplot2
 
-### Septiembre 2020
+### Diciembre 2020
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

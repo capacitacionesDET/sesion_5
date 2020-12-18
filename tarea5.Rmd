@@ -1,0 +1,34 @@
+---
+title: "Ejercicios Sesión 5"
+author: "Capacitadores R en DET"
+date: "18-12-2020"
+output: pdf_document
+header-includes:
+- \usepackage[fontsize=12pt]{scrextend}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Objetivo
+
+Desarrollar visualizaciones simples y claras con el paquete `ggplot2`.
+
+## Primer ejercicio
+
+## Segundo ejercicio
+
+## Tercer ejercicio
+
+## Cuarto ejercicio
+
+## Quinto ejercicio
+
+
+
+
+
+
+
+
