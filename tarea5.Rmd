@@ -17,16 +17,8 @@ Desarrollar visualizaciones simples y claras con el paquete `ggplot2`.
 
 ## Primer ejercicio
 
-Descargar la base de datos `WDI INDICATORS  LA.xlsx` y cargarla en el ambiente de R. 
+Descargar la base de datos [`WDI INDICATORS  LA.xlsx`](https://github.com/nicolasrattor/sesion_5/raw/master/data/WDI%20INDICATORS%20%20LA.xlsx) y cargarla en el ambiente de R. 
 
-```{r}
-library(readxl)
-library(tidyverse)
-
-latam <- read_excel("data/WDI INDICATORS  LA.xlsx",
-                    na="..")                          ## Señalamos que reconozca a ".." como NA
-
-```
 
 ## Segundo ejercicio
 
@@ -40,123 +32,28 @@ latam <- read_excel("data/WDI INDICATORS  LA.xlsx",
 
 ¿Cuántas filas y columnas tiene la nueva base de datos?
 
-```{r}
-dim(latam)
-names(latam)
-latam %>% select(country,serie,`1960`,`2000`,`2010`) %>% head()
-```
-
-```{r}
-
-latam2 <- latam %>% pivot_longer(cols = -c(country,country_code,serie),
-                                 names_to = "anio")
-
-dim(latam2)
-
-latam2 %>% arrange(-value) %>% head()
-
-```
 
 ## Tercer ejercicio
 
 ¿Cuántos países existen en la base de datos?
 
-```{r}
-## Opción más simple: tabla y contar a mano. 
-table(latam2$country)
-
-## Otra opción
-latam2 %>% group_by(country) %>% tally() %>% dim()
-```
-
-
 Crea una nueva base de datos que solamente contenga datos para un país (el que tú quieras). Dale el nombre del país seleccionado a esta nueva base de datos.
-
-```{r}
-cuba<-latam2 %>% filter(country=="Cuba")
-cuba %>% arrange(-value) %>% head()
-```
 
 Filtra la base del país, dejando solamente los datos de una variable (`serie`), la que te parezca más interesante y que ojalá no tenga muchos valores perdidos (`NA` o `..`).
 
-```{r}
-## Con esta línea vemos cualés variables tienen menos NA
-cuba %>% filter(is.na(value)) %>% group_by(serie) %>% tally() %>% arrange(n) %>% head()
-
-## Resulta interesante la mortalidad infantil. 
-cuba_mortalidad<-cuba %>% filter(serie=="Mortality rate, infant (per 1,000 live births)")
-cuba_mortalidad %>% head()
-```
-
 Grafica la evolución en el tiempo de la variable que seleccionaste. 
-
-```{r}
-library(ggplot2)
-
-## Ver formato de variable. 
-cuba_mortalidad$anio<-as.numeric(cuba_mortalidad$anio)
-
-cuba_mortalidad %>% 
-  ggplot(aes(x=anio,y=value)) + 
-  geom_line() + 
-  labs(x="años",y="Tasa de mortalidad",
-      title = "Evolución de la tasa de mortalidad infantil en Cuba, desde 1960 a 2019")
-
-```
 
 
 ## Cuarto ejercicio
 
-Considerando la misma variable, u otra, compara la evolución de esta en el tiempo entre 3 o más países. 
-
-```{r}
-
-latam2_mortalidad<-latam2 %>% filter(serie=="Mortality rate, infant (per 1,000 live births)")
-
-table(latam2_mortalidad$country)
-
-latam2_mortalidad$anio<-as.numeric(latam2_mortalidad$anio)
-
-## Todos los países de AL
-latam2_mortalidad %>% 
-  ggplot(aes(x=anio,y=value,color=country)) + 
-  geom_line() + 
-  labs(x="años",y="Tasa de mortalidad",
-      title = "Evolución de la tasa de mortalidad infantil por cada 1.000 naciomientos en América Latina",
-      subtitle = "Desde 1960 a 2019") + 
-  theme(plot.title = element_text(size=8),
-        legend.position = "bottom")
-
-## Solo algunos
-latam2_mortalidad %>% 
-  filter(country %in% c("Cuba","Chile","Brazil","Argentina")) %>% 
-  ggplot(aes(x=anio,y=value,color=country)) + 
-  geom_line() + 
-  labs(x="años",y="Tasa de mortalidad",
-      title = "Evolución de la tasa de mortalidad infantil por cada 1.000 naciomientos en América Latina",
-      subtitle = "Desde 1960 a 2019") + 
-  theme(plot.title = element_text(size=8),
-        legend.position = "bottom")
-
-```
+Considerando la misma variable, u otra, y compara la evolución de esta en el tiempo entre 3 o más países. 
 
 
 ## Quinto ejercicio
 
-Filtre la base de datos de todos los países por otra variable y escoga un año, el que guste. 
+Filtre la base de datos de todos los países por otra variable y selecciona un año, el que te parezca. 
 
-Haga un gráfico de barras, donde cada barra corresponda a un país. Si gusta, al final del código puede agregar el comando `+ coord_flip()`, para invertir el gráfico y sea más clara su lectura. 
-
-```{r}
-latam2$anio<-as.numeric(latam2$anio)
-latam2 %>% filter(anio==2019 & serie=="Urban population (% of total population)") %>% 
-  ggplot(aes(x = fct_reorder(country, desc(value)),y=value)) + geom_bar(stat = "identity") + coord_flip() +
-  geom_hline(aes(yintercept = mean(value)),linetype="dashed", color="red" )+
-  labs(x="Países",y="% de población urbana", title = "Porcentaje de población urbana en países de AL (2015)")
-
-```
-
-
+Haga un gráfico de barras, donde cada barra corresponda a un país. Si gusta, al final del código puede agregar el comando `+ coord_flip()`, para invertir el gráfico y que sea más clara su lectura. 
 
 
 ## Sexto ejercicio
@@ -164,16 +61,6 @@ latam2 %>% filter(anio==2019 & serie=="Urban population (% of total population)"
 Replique el ejercicio anterior, pero en vez de seleccionar un año, seleccione cuatro años (por ejemplo: 1960,1980,2000 y 2019). Haga un gráfico con 4 paneles, donde cada uno corresponda a un año.
 
 Para mejorar la visualización puede seleccionar algunos países.
-
-```{r}
-latam2 %>% filter(anio %in% c(1960,1980,2000,2019) & 
-                    serie=="Urban population (% of total population)" &
-                    country %in% c("Cuba","Chile","Brazil","Argentina")) %>% 
-  ggplot(aes(x = fct_reorder(country, desc(value)),y=value)) + geom_bar(stat = "identity") + facet_wrap(~as.factor(anio)) +
-  labs(x="Países",y="% de población urbana", title = "Porcentaje de población urbana en países de AL (2015)")
-```
-
-
 
 
 

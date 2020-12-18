@@ -1,5 +1,5 @@
 ---
-title: "Ejercicios Sesión 5"
+title: "Soluciones Ejercicios Sesión 5"
 author: "Capacitadores R en DET"
 date: "18-12-2020"
 output: pdf_document
@@ -19,7 +19,7 @@ Desarrollar visualizaciones simples y claras con el paquete `ggplot2`.
 
 Descargar la base de datos `WDI INDICATORS  LA.xlsx` y cargarla en el ambiente de R. 
 
-```{r}
+```{r warning=FALSE, message=FALSE}
 library(readxl)
 library(tidyverse)
 
@@ -90,7 +90,7 @@ cuba_mortalidad %>% head()
 
 Grafica la evolución en el tiempo de la variable que seleccionaste. 
 
-```{r}
+```{r  warning=FALSE, message=FALSE}
 library(ggplot2)
 
 ## Ver formato de variable. 

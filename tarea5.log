@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.12.13)  18 DEC 2020 18:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.12.13)  18 DEC 2020 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**soluciones-tarea-5.tex
-(./soluciones-tarea-5.tex
+**tarea5.tex
+(./tarea5.tex
 LaTeX2e <2020-10-01> patch level 2
 L3 programming layer <2020-12-07> xparse <2020-03-03> (c:/Users/nicol/AppData/R
 oaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
@@ -362,24 +362,6 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen159
 \Gm@dimlist=\toks24
 )
-(c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.
-sty
-Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count277
-\FV@InFile=\read2
-\FV@TabBox=\box49
-\c@FancyVerbLine=\count278
-\FV@StepNumber=\count279
-\FV@OutFile=\write3
-) (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.st
-y
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip53
-\fb@frw=\dimen160
-\fb@frh=\dimen161
-\FrameRule=\dimen162
-\FrameSep=\dimen163
-)
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.
 sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
@@ -396,8 +378,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\Gin@req@height=\dimen164
-\Gin@req@width=\dimen165
+\Gin@req@height=\dimen160
+\Gin@req@width=\dimen161
 )
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/grffile/grffile.st
 y
@@ -518,7 +500,7 @@ LaTeX Warning: Command \@footnotemark  has changed.
 
 )
 Package scrextend Info: File `scrsize12pt.clo' used to setup font sizes on inpu
-t line 103.
+t line 63.
 
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrsiz
 e12pt.clo
@@ -528,29 +510,29 @@ File: scrsize12pt.clo 2020/09/21 v3.32 KOMA-Script font size class option (12pt
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backen
 d-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count280
-\l__pdf_internal_box=\box50
-) (./soluciones-tarea-5.aux)
-\openout1 = `soluciones-tarea-5.aux'.
+\l__kernel_color_stack_int=\count277
+\l__pdf_internal_box=\box49
+) (./tarea5.aux)
+\openout1 = `tarea5.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
 
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epsto
 pdf-base.sty
@@ -570,7 +552,7 @@ df-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 108.
+Package hyperref Info: Link coloring OFF on input line 68.
 
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.s
 ty
@@ -584,14 +566,14 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count281
+\c@section@level=\count278
 )
-LaTeX Info: Redefining \ref on input line 108.
-LaTeX Info: Redefining \pageref on input line 108.
-LaTeX Info: Redefining \nameref on input line 108.
-(./soluciones-tarea-5.out) (./soluciones-tarea-5.out)
-\@outlinefile=\write4
-\openout4 = `soluciones-tarea-5.out'.
+LaTeX Info: Redefining \ref on input line 68.
+LaTeX Info: Redefining \pageref on input line 68.
+LaTeX Info: Redefining \nameref on input line 68.
+(./tarea5.out) (./tarea5.out)
+\@outlinefile=\write3
+\openout3 = `tarea5.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -627,409 +609,71 @@ LaTeX Info: Redefining \nameref on input line 108.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-10.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
+0.
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-10.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
+0.
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-110.
+70.
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-110.
+70.
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 110.
+(Font)              <14.4> on input line 70.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 110.
+(Font)              <10> on input line 70.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 110.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 110
-.
+(Font)              <7> on input line 70.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
+
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 110
-.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
+
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-15.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
+5.
 (c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 125.
-[1
+) [1
 
 {c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
-x.map}]
-Overfull \hbox (42.75623pt too wide) in paragraph at lines 195--195
-[]\T1/lmtt/m/n/12 ##   country   serie                                         
-  `1960` `2000` `2010`[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 195--195
-[]\T1/lmtt/m/n/12 ##   <chr>     <chr>                                         
-   <dbl>  <dbl>  <dbl>[] 
- []
-
-
-Overfull \hbox (42.76323pt too wide) in paragraph at lines 195--195
-[]\T1/lmtt/m/n/12 ## 1 Argentina Access to electricity (% of population)       
-      NA   NA     98.8[] 
- []
-
-
-Overfull \hbox (42.74922pt too wide) in paragraph at lines 195--195
-[]\T1/lmtt/m/n/12 ## 2 Argentina Access to clean fuels and technologies for coo
-~     NA   94.8   97.6[] 
- []
-
-
-Overfull \hbox (42.76323pt too wide) in paragraph at lines 195--195
-[]\T1/lmtt/m/n/12 ## 3 Argentina Access to electricity, rural (% of rural popul
-~     NA   NA     90.2[] 
- []
-
-
-Overfull \hbox (42.75623pt too wide) in paragraph at lines 195--195
-[]\T1/lmtt/m/n/12 ## 4 Argentina Access to electricity, urban (% of urban popul
-~     NA   NA     99.7[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 195--195
-[]\T1/lmtt/m/n/12 ## 5 Argentina Account ownership at a financial institution o
-~     NA   NA     NA[] 
- []
-
-
-Overfull \hbox (30.41322pt too wide) in paragraph at lines 195--195
-[]\T1/lmtt/m/n/12 ## 6 Argentina Account ownership at a financial institution o
-~     NA   NA     NA[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 226--226
-[]\T1/lmtt/m/n/12 ##   country  country_code serie                             
-       anio    value[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 226--226
-[]\T1/lmtt/m/n/12 ##   <chr>    <chr>        <chr>                             
-       <chr>   <dbl>[] 
- []
-
-
-Overfull \hbox (30.41322pt too wide) in paragraph at lines 226--226
-[]\T1/lmtt/m/n/12 ## 1 Colombia COL          Gross national expenditure (curren
-t LCU) 2019  1.13e15[] 
- []
-
-
-Overfull \hbox (30.40622pt too wide) in paragraph at lines 226--226
-[]\T1/lmtt/m/n/12 ## 2 Colombia COL          GDP (current LCU)                 
-       2019  1.06e15[] 
- []
-
-
-Overfull \hbox (30.40622pt too wide) in paragraph at lines 226--226
-[]\T1/lmtt/m/n/12 ## 3 Colombia COL          GDP: linked series (current LCU)  
-       2019  1.06e15[] 
- []
-
-
-Overfull \hbox (30.42023pt too wide) in paragraph at lines 226--226
-[]\T1/lmtt/m/n/12 ## 4 Colombia COL          Gross national expenditure (curren
-t LCU) 2018  1.03e15[] 
- []
-
-
-Overfull \hbox (30.41322pt too wide) in paragraph at lines 226--226
-[]\T1/lmtt/m/n/12 ## 5 Colombia COL          GNI (current LCU)                 
-       2019  1.03e15[] 
- []
-
-
-Overfull \hbox (30.40622pt too wide) in paragraph at lines 226--226
-[]\T1/lmtt/m/n/12 ## 6 Colombia COL          GNI: linked series (current LCU)  
-       2019  1.03e15[] 
- []
-
-[2]
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 250--250
-[]\T1/lmtt/m/n/12 ##          Argentina            Bolivia             Brazil  
-            Chile[] 
- []
-
-
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 250--250
-[]\T1/lmtt/m/n/12 ##              87840              87840              87840  
-            87840[] 
- []
-
-
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 250--250
-[]\T1/lmtt/m/n/12 ##           Colombia         Costa Rica               Cuba D
-ominican Republic[] 
- []
-
-
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 250--250
-[]\T1/lmtt/m/n/12 ##              87840              87840              87840  
-            87840[] 
- []
-
-
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 250--250
-[]\T1/lmtt/m/n/12 ##            Ecuador        El Salvador           Honduras  
-           Panama[] 
- []
-
-
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 250--250
-[]\T1/lmtt/m/n/12 ##              87840              87840              87840  
-            87840[] 
- []
-
-
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 250--250
-[]\T1/lmtt/m/n/12 ##           Paraguay               Peru            Uruguay  
-    Venezuela, RB[] 
- []
-
-
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 250--250
-[]\T1/lmtt/m/n/12 ##              87840              87840              87840  
-            87840[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 284--284
-[]\T1/lmtt/m/n/12 ##   country country_code serie                              
-      anio       value[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 284--284
-[]\T1/lmtt/m/n/12 ##   <chr>   <chr>        <chr>                              
-      <chr>      <dbl>[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 284--284
-[]\T1/lmtt/m/n/12 ## 1 Cuba    CUB          GDP (current LCU)                  
-      2018     1.00e11[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 284--284
-[]\T1/lmtt/m/n/12 ## 2 Cuba    CUB          GDP (current US$)                  
-      2018     1.00e11[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 284--284
-[]\T1/lmtt/m/n/12 ## 3 Cuba    CUB          GDP: linked series (current LCU)   
-      2018     1.00e11[] 
- []
-
-
-Overfull \hbox (42.75623pt too wide) in paragraph at lines 284--284
-[]\T1/lmtt/m/n/12 ## 4 Cuba    CUB          Gross value added at basic prices (
-GVA)~ 2018     9.89e10[] 
- []
-
-
-Overfull \hbox (42.75623pt too wide) in paragraph at lines 284--284
-[]\T1/lmtt/m/n/12 ## 5 Cuba    CUB          Gross value added at basic prices (
-GVA)~ 2018     9.89e10[] 
- []
-
-
-Overfull \hbox (42.75623pt too wide) in paragraph at lines 284--284
-[]\T1/lmtt/m/n/12 ## 6 Cuba    CUB          Gross national expenditure (current
- LCU) 2018     9.81e10[] 
- []
-
-[3]
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 327--327
-[]\T1/lmtt/m/n/12 ##   country country_code serie                              
-           anio  value[] 
- []
-
-
-Overfull \hbox (42.77023pt too wide) in paragraph at lines 327--327
-[]\T1/lmtt/m/n/12 ##   <chr>   <chr>        <chr>                              
-           <chr> <dbl>[] 
- []
-
-
-Overfull \hbox (42.75623pt too wide) in paragraph at lines 327--327
-[]\T1/lmtt/m/n/12 ## 1 Cuba    CUB          Mortality rate, infant (per 1,000 l
-ive birth~ 1960   47.1[] 
- []
-
-
-Overfull \hbox (42.75623pt too wide) in paragraph at lines 327--327
-[]\T1/lmtt/m/n/12 ## 2 Cuba    CUB          Mortality rate, infant (per 1,000 l
-ive birth~ 1961   45.3[] 
- []
-
-
-Overfull \hbox (42.74922pt too wide) in paragraph at lines 327--327
-[]\T1/lmtt/m/n/12 ## 3 Cuba    CUB          Mortality rate, infant (per 1,000 l
-ive birth~ 1962   43.6[] 
- []
-
-
-Overfull \hbox (42.74922pt too wide) in paragraph at lines 327--327
-[]\T1/lmtt/m/n/12 ## 4 Cuba    CUB          Mortality rate, infant (per 1,000 l
-ive birth~ 1963   41.9[] 
- []
-
-
-Overfull \hbox (42.75623pt too wide) in paragraph at lines 327--327
-[]\T1/lmtt/m/n/12 ## 5 Cuba    CUB          Mortality rate, infant (per 1,000 l
-ive birth~ 1964   40.3[] 
- []
-
-
-Overfull \hbox (42.74922pt too wide) in paragraph at lines 327--327
-[]\T1/lmtt/m/n/12 ## 6 Cuba    CUB          Mortality rate, infant (per 1,000 l
-ive birth~ 1965   38.7[] 
- []
-
-<soluciones-tarea-5_files/figure-latex/unnamed-chunk-7-1.pdf, id=55, 469.755pt 
-x 325.215pt>
-File: soluciones-tarea-5_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file 
-(type pdf)
-<use soluciones-tarea-5_files/figure-latex/unnamed-chunk-7-1.pdf>
-Package pdftex.def Info: soluciones-tarea-5_files/figure-latex/unnamed-chunk-7-
-1.pdf  used on input line 346.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[4]
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 372--372
-[]\T1/lmtt/m/n/12 ##          Argentina            Bolivia             Brazil  
-            Chile[] 
- []
-
-
-Overfull \hbox (11.8672pt too wide) in paragraph at lines 372--372
-[]\T1/lmtt/m/n/12 ##                 61                 61                 61  
-               61[] 
- []
-
-
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 372--372
-[]\T1/lmtt/m/n/12 ##           Colombia         Costa Rica               Cuba D
-ominican Republic[] 
- []
-
-
-Overfull \hbox (11.8672pt too wide) in paragraph at lines 372--372
-[]\T1/lmtt/m/n/12 ##                 61                 61                 61  
-               61[] 
- []
-
-
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 372--372
-[]\T1/lmtt/m/n/12 ##            Ecuador        El Salvador           Honduras  
-           Panama[] 
- []
-
-
-Overfull \hbox (11.8672pt too wide) in paragraph at lines 372--372
-[]\T1/lmtt/m/n/12 ##                 61                 61                 61  
-               61[] 
- []
-
-
-Overfull \hbox (11.89522pt too wide) in paragraph at lines 372--372
-[]\T1/lmtt/m/n/12 ##           Paraguay               Peru            Uruguay  
-    Venezuela, RB[] 
- []
-
-
-Overfull \hbox (11.8672pt too wide) in paragraph at lines 372--372
-[]\T1/lmtt/m/n/12 ##                 61                 61                 61  
-               61[] 
- []
-
-[5 <./soluciones-tarea-5_files/figure-latex/unnamed-chunk-7-1.pdf>]
-<soluciones-tarea-5_files/figure-latex/unnamed-chunk-8-1.pdf, id=70, 469.755pt 
-x 325.215pt>
-File: soluciones-tarea-5_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file 
-(type pdf)
-<use soluciones-tarea-5_files/figure-latex/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: soluciones-tarea-5_files/figure-latex/unnamed-chunk-8-
-1.pdf  used on input line 394.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[6 <./soluciones-tarea-5_files/figure-latex/unnamed-chunk-8-1.pdf>]
-<soluciones-tarea-5_files/figure-latex/unnamed-chunk-8-2.pdf, id=80, 469.755pt 
-x 325.215pt>
-File: soluciones-tarea-5_files/figure-latex/unnamed-chunk-8-2.pdf Graphic file 
-(type pdf)
-<use soluciones-tarea-5_files/figure-latex/unnamed-chunk-8-2.pdf>
-Package pdftex.def Info: soluciones-tarea-5_files/figure-latex/unnamed-chunk-8-
-2.pdf  used on input line 415.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-<soluciones-tarea-5_files/figure-latex/unnamed-chunk-9-1.pdf, id=81, 469.755pt 
-x 325.215pt>
-File: soluciones-tarea-5_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file 
-(type pdf)
-<use soluciones-tarea-5_files/figure-latex/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: soluciones-tarea-5_files/figure-latex/unnamed-chunk-9-
-1.pdf  used on input line 438.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[7 <./soluciones-tarea-5_files/figure-latex/unnamed-chunk-8-2.pdf>]
-<soluciones-tarea-5_files/figure-latex/unnamed-chunk-10-1.pdf, id=93, 469.755pt
- x 325.215pt>
-File: soluciones-tarea-5_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file
- (type pdf)
-<use soluciones-tarea-5_files/figure-latex/unnamed-chunk-10-1.pdf>
-Package pdftex.def Info: soluciones-tarea-5_files/figure-latex/unnamed-chunk-10
--1.pdf  used on input line 459.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[8 <./soluciones-tarea-5_files/figure-latex/unnamed-chunk-9-1.pdf>] [9 <./soluc
-iones-tarea-5_files/figure-latex/unnamed-chunk-10-1.pdf>] (./soluciones-tarea-5
-.aux)
-Package rerunfilecheck Info: File `soluciones-tarea-5.out' has not changed.
+x.map}] [2] (./tarea5.aux)
+Package rerunfilecheck Info: File `tarea5.out' has not changed.
 (rerunfilecheck)             Checksum: 20444A25181B4664014E8E0CDB18A14A;846.
  ) 
 Here is how much of TeX's memory you used:
- 12024 strings out of 481364
- 178853 string characters out of 5917579
- 506968 words of memory out of 5000000
- 28624 multiletter control sequences out of 15000+600000
- 431659 words of font info for 51 fonts, out of 8000000 for 9000
+ 11514 strings out of 481364
+ 169580 string characters out of 5917579
+ 479682 words of memory out of 5000000
+ 28137 multiletter control sequences out of 15000+600000
+ 431022 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 106i,6n,111p,523b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 106i,6n,111p,511b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.e
 nc}<c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmb
 x12.pfb><c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/l
 m/lmr12.pfb><c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/publ
 ic/lm/lmr17.pfb><c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/
-public/lm/lmtk10.pfb><c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/fonts/t
-ype1/public/lm/lmtt12.pfb><c:/Users/nicol/AppData/Roaming/TinyTeX/texmf-dist/fo
-nts/type1/public/lm/lmtti10.pfb>
-Output written on soluciones-tarea-5.pdf (9 pages, 194533 bytes).
+public/lm/lmtt12.pfb>
+Output written on tarea5.pdf (2 pages, 103924 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 82 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 74 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
 
