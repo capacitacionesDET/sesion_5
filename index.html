@@ -4,7 +4,7 @@
     <title>Capacitación en R</title>
     <meta charset="utf-8" />
     <meta name="author" content="" />
-    <meta name="date" content="2020-12-18" />
+    <meta name="date" content="2020-12-21" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -67,7 +67,7 @@ La visualización juega un rol importante en las etapas del análisis de datos:
 
 --
 
-*"The simple graph has brought more information to the data analyst's mind than any other device."* - [John Tukey](https://es.wikipedia.org/wiki/John_W._Tukey)
+*"El simple gráfico ha traído más información a la mente del analista de datos que cualquier otro dispositivo."* - [John Tukey](https://es.wikipedia.org/wiki/John_W._Tukey)
 
 
 
@@ -326,13 +326,6 @@ background-position: 100% 0%
 
 ```r
 library(ggplot2)
-```
-
-```
-## Warning: package 'ggplot2' was built under R version 3.6.3
-```
-
-```r
 ggplot(data = pressure) + 
           geom_point(mapping = aes(x = temperature, y = pressure))
 ```
@@ -1047,7 +1040,6 @@ Memorizar las funciones es una mala estrategia para mejorar en ggplot
 Debemos preocuparnos de 2 cosas:
 
 1. Entender la sintaxis de ggplot
-
 2. Aprender a buscar rápidamente en internet lo que necesitamos
 
 
@@ -1056,56 +1048,25 @@ background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
 
-# Ejemplo INE
+#Buscando en internet
 
-### Apliquemos todo lo aprendido a un caso concreto del INE 
+Muchas veces nos vamos a encontrar con la necesidad de hacer un gráfico, pero no sabremos:
++ Cuál de todos es el más adecuado.
++ Cómo realizarlo.
 
---
-
-La institución está transitando hacia sistemas automatizados de codificación
-
---
-
-Ningún sistema es perfecto 
+Para ello, es esencial saber cómo buscar en Internet.
 
 --
 
-Típicamente, existe un porcentaje de error que debemos minimizar
-
-
-.center[
-&lt;img src="https://media.giphy.com/media/EizPK3InQbrNK/giphy.gif" width="300" /&gt;
-]
+En caso que **no** sepamos lo que queremos:
+1. Hacemos un **barrido de las gráficas más comunes**, disponibles en ggplot2. Hay sitios muy buenos para ello: [The R Graph Gallery](https://www.r-graph-gallery.com/index.html), [Top 50 ggplot2 Visualizations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html) y [Data-to-Viz](https://www.data-to-viz.com/).
 
 --
 
-Veamos el ejemplo de la CCIF
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Ejemplo INE
-
-La EPF usa un clasificador llamado CCIF, que tiene más de 1.000 categorías
-
---
-
-&lt;img src="index_files/figure-html/unnamed-chunk-23-1.png" style="display: block; margin: auto;" /&gt;
-
---
-
-.pull-left[
-
-### ¿Cómo podemos mejorar el resultado?
-
-]
-
-.pull-right[
-&lt;img src="https://media.giphy.com/media/3o7buirYcmV5nSwIRW/giphy.gif" width="180" /&gt;
-]
-
+En caso que **sí** sepamos lo que queremos:
+1. Definimos bien **lo que queremos**: *gráfico apilado de barras de porcentajes*.
+2. Buscamos cómo se llama **el gráfico en inglés**, dado que hay mucha más documentación: *stacked percentage bar chart* + ggplot2.
+3. Probamos con una sintaxis previa y la **adaptamos a nuestros datos**, fijándonos en la estructura de éstos.
 
 
 ---
@@ -1113,95 +1074,13 @@ background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
 
-# Ejemplo INE
+#Adaptando a nuestros datos
 
-### Idea: Puedo codificar los registros difíciles a mano y dejarle los fáciles a mi sistema
+**Simulémoslo juntos!** 🤓
 
-.center[
-&lt;img src="https://media.giphy.com/media/LrGHJGtTbT7PO/giphy.gif" width="400" /&gt;
-]
-
---
-
-### Estrategia mixta: parte automática y parte manual
-
----
-
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Ejemplo INE
-
-.center[
-&lt;img src="imagenes/experimento.png" width="300" /&gt;
-]
+Intentemos hacer un  *gráfico apilado de barras de porcentajes*, aplicado a la base del paquete [guaguas](https://github.com/rivaquiroga/guaguas).
 
 
-Receta:
-
-- **paso 1:** Rankear los registros de mayor a menor dificultad
-
---
-
-- **paso 2:** Elegir un punto de corte
-
---
-
-- **paso 3:** Codificamos automáticamente solo lo que está sobre el punto de corte (más fáciles)
-
---
-
-- **paso 4:** Calcular el error
-
-
----
-
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Ejemplo INE
-
-&lt;img src="index_files/figure-html/unnamed-chunk-24-1.png" style="display: block; margin: auto;" /&gt;
-
-### Si clasificamos el 5% a mano, mejoramos aproximadamente 3 pp
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Ejemplo INE
-
-### ¿Cuál es el resultado a nivel de categoría?
-
---
-
-
-```
-## Warning: package 'gganimate' was built under R version 3.6.3
-```
-
-&lt;img src="index_files/figure-html/unnamed-chunk-25-1.gif" style="display: block; margin: auto;" /&gt;
-
-
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Más ejemplos para motivar
-
-
-.center[
-&lt;img src="https://klauslehmann.netlify.app/img/inflacion.gif" width="800" /&gt;
-]
-
-[EPF-D3partitionR](https://klauslehmann.netlify.app/2019/07/07/en-qu%C3%A9-gastan-los-hogares-chilenos/)
-
-[EPF-shiny](https://klaus-lehmann.shinyapps.io/epf-app/?_ga=2.98503452.206060216.1596836306-1258237829.1596836306)
 
 ---
 
